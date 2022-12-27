@@ -36,11 +36,9 @@ function mst(graph){
         }
       }
     }
-    console.log("" + k + " " + l + ": " + graph[k][l]);
+    console.log("Weight between Node " + k + " and Node " + l + ": " + graph[k][l]);
     vertex_arr[l] = true;
     edges++;
   }
 }
-
-
 mst(graph);
