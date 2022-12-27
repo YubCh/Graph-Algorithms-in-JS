@@ -1,6 +1,6 @@
 
 
-
+// GRAPHTHEORY 2021 HA 6 rewritten in JS
 
 graph = [
   // 0  |  1  |  2  |  3 |  4  | 5  |  6   |  7
@@ -16,18 +16,21 @@ graph = [
 
 
 
+
 function dfs(graph, root){
   let visited = [];
   let stack = [];
   visited.fill(false,0,visited.length);
   visited[root] = true;
+  // root pushed in to the stack
   stack.push(root);
   let current_vertex;
 
   while(stack.length > 0){
+    // popping vertex from the stack to visit its neighbours
     current_vertex = stack.pop();
     console.log(current_vertex + " visited ");
-
+    //pushing all neighbours into the stack 
     for(let i = 0; i < graph[current_vertex].length; i++){
       if(graph[current_vertex][i] && !visited[i]){
       visited[i] = true;

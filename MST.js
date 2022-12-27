@@ -1,5 +1,5 @@
 
-
+// GRAPHTHEORY 2021 HA 7 rewritten in JS
 graph = [
  //0,1,2,3,4,5
   [0,5,8,3,4,5], //0
@@ -17,14 +17,16 @@ function mst(graph){
   let edges = 0;
 
   vertex_arr.fill(false,0,vertex_arr.length);
-  //startvalue
   vertex_arr[0] = true;
 
+  //looping through all edges V-1 times
   while(edges < graph.length - 1){
     let min = Number.MAX_VALUE;
     k,l = 0;
     for(let i = 0; i < graph.length; i++){
       if(vertex_arr[i]){
+        //going through all neighbours of the current vertex and selecting the 
+        //lowest edge weight
         for(let j = 0; j < graph.length; j++){
           if(!vertex_arr[j] && graph[i][j] > 0){
             if(min > graph[i][j]){
